@@ -43,7 +43,7 @@ const SoilHealthSection = () => {
           <span className="text-sm font-medium">{name}</span>
           <span className={`text-sm ${statusColor}`}>{status}</span>
         </div>
-        <Progress value={percentage} className="h-2" indicatorClassName={`bg-${color}`} />
+        <Progress value={percentage} className={`h-2 bg-${color}`} />
         <div className="flex justify-between text-xs text-muted-foreground">
           <span>0</span>
           <span>{max}</span>
