@@ -1,7 +1,7 @@
 
 import React from 'react';
 import SignupForm from '@/components/auth/SignupForm';
-import { GrainIcon } from 'lucide-react';
+import { Wheat } from 'lucide-react';
 
 const Signup = () => {
   return (
@@ -9,7 +9,7 @@ const Signup = () => {
       <div className="flex flex-col items-center justify-center flex-1 px-4 py-12">
         <div className="mb-8 text-center">
           <div className="flex items-center justify-center mb-4">
-            <GrainIcon className="h-12 w-12 text-primary" />
+            <Wheat className="h-12 w-12 text-primary" />
           </div>
           <h1 className="text-3xl font-bold text-primary">FarmSense Now</h1>
           <p className="text-muted-foreground">Join our platform for smart farm management</p>
