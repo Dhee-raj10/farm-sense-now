@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import NavBar from '@/components/NavBar';
@@ -8,8 +7,11 @@ import SoilHealthSection from '@/components/SoilHealthSection';
 import PestAlerts from '@/components/PestAlerts';
 import SoilImageUpload from '@/components/SoilImageUpload';
 import CropRecommendations from '@/components/CropRecommendations';
+import OpenAISetup from '@/components/OpenAISetup';
+import AIRecommendations from '@/components/AIRecommendations';
 import Footer from '@/components/Footer';
 import { CropRecommendation } from '@/components/CropRecommendations';
+import { hasOpenAIKey } from '@/utils/openai';
 
 // Mock crop recommendations data
 const defaultCropRecommendations: CropRecommendation[] = [
@@ -56,6 +58,7 @@ const Dashboard = () => {
   const [user, setUser] = useState<{ email: string; farmName?: string } | null>(null);
   const [cropRecommendations, setCropRecommendations] = useState<CropRecommendation[]>(defaultCropRecommendations);
   const [showSoilAnalysisResults, setShowSoilAnalysisResults] = useState(false);
+  const [soilAnalysisData, setSoilAnalysisData] = useState<any>(null);
 
   useEffect(() => {
     // Check if user is logged in
@@ -70,6 +73,7 @@ const Dashboard = () => {
 
   const handleSoilAnalysisComplete = (results: any) => {
     setShowSoilAnalysisResults(true);
+    setSoilAnalysisData(results);
     
     // Update crop recommendations based on soil analysis
     // In a real app, this would use actual data from the analysis
@@ -152,6 +156,17 @@ const Dashboard = () => {
                   <span>Get personalized crop recommendations based on your soil composition.</span>
                 </li>
               </ul>
+            </div>
+          </div>
+          
+          {/* OpenAI API Integration */}
+          <div className="py-8">
+            <h2 className="text-2xl font-bold tracking-tight mb-6">AI-Powered Insights</h2>
+            <div className="grid gap-6 grid-cols-1 md:grid-cols-2">
+              <OpenAISetup />
+              {showSoilAnalysisResults && (
+                <AIRecommendations soilData={soilAnalysisData} />
+              )}
             </div>
           </div>
           

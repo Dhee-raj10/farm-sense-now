@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import NavBar from '../components/NavBar';
@@ -9,7 +8,7 @@ import PestAlerts from '../components/PestAlerts';
 import Recommendations from '../components/Recommendations';
 import Footer from '../components/Footer';
 import { Button } from '@/components/ui/button';
-import { Sprout, BarChart, CloudRain, Upload } from 'lucide-react';
+import { Sprout, BarChart, CloudRain, Upload, Brain } from 'lucide-react';
 
 const Index = () => {
   const navigate = useNavigate();
@@ -35,7 +34,7 @@ const Index = () => {
                 Smart Farming Insights at Your Fingertips
               </h1>
               <p className="text-xl mb-8">
-                Upload soil images, analyze soil health, get weather forecasts and receive personalized crop recommendations
+                Upload soil images, analyze soil health, get weather forecasts and receive AI-powered crop recommendations
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button 
@@ -97,11 +96,11 @@ const Index = () => {
               
               <div className="bg-card rounded-lg p-6 text-center shadow-sm">
                 <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                  <Sprout className="h-8 w-8 text-primary" />
+                  <Brain className="h-8 w-8 text-primary" />
                 </div>
-                <h3 className="text-xl font-semibold mb-2">Crop Recommendations</h3>
+                <h3 className="text-xl font-semibold mb-2">AI-Powered Recommendations</h3>
                 <p className="text-muted-foreground">
-                  Get personalized crop suggestions based on your soil composition and climate
+                  Get advanced crop suggestions and farming insights powered by OpenAI
                 </p>
               </div>
             </div>
