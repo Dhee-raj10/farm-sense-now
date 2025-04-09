@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,6 +62,23 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				farm: {
+					green: {
+						light: '#4CAF50',
+						DEFAULT: '#2E7D32',
+						dark: '#1B5E20'
+					},
+					soil: {
+						light: '#A1887F',
+						DEFAULT: '#795548',
+						dark: '#5D4037'
+					},
+					sky: {
+						light: '#64B5F6',
+						DEFAULT: '#1976D2',
+						dark: '#0D47A1'
+					}
 				}
 			},
 			borderRadius: {
@@ -84,11 +102,19 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'pulse-slow': {
+					'0%, 100%': { opacity: '1' },
+					'50%': { opacity: '0.7' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'pulse-slow': 'pulse-slow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite'
+			},
+			backgroundImage: {
+				'gradient-farm': 'linear-gradient(135deg, #2E7D32 0%, #1976D2 100%)'
 			}
 		}
 	},
