@@ -11,7 +11,7 @@ const Signup = () => {
           <div className="flex items-center justify-center mb-4">
             <Wheat className="h-12 w-12 text-primary" />
           </div>
-          <h1 className="text-3xl font-bold text-primary">FarmSense Now</h1>
+          <h1 className="text-3xl font-bold text-primary">Smart Farming</h1>
           <p className="text-muted-foreground">Join our platform for smart farm management</p>
         </div>
         <SignupForm />
