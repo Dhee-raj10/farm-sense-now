@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { 
   AreaChart, 
@@ -14,7 +13,7 @@ import {
 } from 'recharts';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { ArrowUp, ArrowDown, Droplets, Thermometer, Bug, Plant } from 'lucide-react';
+import { ArrowUp, ArrowDown, Droplets, Thermometer, Bug, Sprout } from 'lucide-react';
 
 const overviewData = [
   { name: 'Jan', temp: 12, rainfall: 40, moisture: 65 },
@@ -116,7 +115,7 @@ const DashboardOverview = () => {
         <Card className="border shadow-md hover:shadow-lg transition-shadow">
           <CardContent className="p-6">
             <StatusIndicator 
-              icon={Plant}
+              icon={Sprout}
               value="Good" 
               label="Crop Health"
               trend="up"
