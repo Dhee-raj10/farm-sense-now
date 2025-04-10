@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Bell, Menu, X } from 'lucide-react';
+import { Bell, Menu, User, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { 
   Sheet,
@@ -9,6 +9,14 @@ import {
 } from '@/components/ui/sheet';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { useIsMobile } from '@/hooks/use-mobile';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const NavBar = () => {
   const isMobile = useIsMobile();
@@ -48,7 +56,7 @@ const NavBar = () => {
   );
 
   const renderDesktopNav = () => (
-    <nav className="hidden md:flex items-center space-x-6">
+    <nav className="hidden md:flex items-center space-x-8">
       {navItems.map((item) => (
         <a
           key={item.name}
@@ -62,15 +70,15 @@ const NavBar = () => {
   );
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 shadow-sm">
       <div className="container flex h-16 items-center justify-between">
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-4">
           {isMobile && renderMobileNav()}
           <a href="/" className="flex items-center space-x-2">
-            <div className="w-8 h-8 rounded-full bg-gradient-farm flex items-center justify-center">
+            <div className="w-9 h-9 rounded-md bg-gradient-farm flex items-center justify-center">
               <span className="text-white font-bold text-sm">SF</span>
             </div>
-            <span className="font-semibold">Smart Farming</span>
+            <span className="font-semibold text-lg">Smart Farming</span>
           </a>
         </div>
         
@@ -83,10 +91,30 @@ const NavBar = () => {
             <span className="sr-only">Notifications</span>
           </Button>
           
-          <Avatar>
-            <AvatarImage src="" alt="User" />
-            <AvatarFallback className="bg-farm-green text-white">JD</AvatarFallback>
-          </Avatar>
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="ghost" className="flex items-center space-x-2 h-8 px-2">
+                <Avatar className="h-8 w-8">
+                  <AvatarImage src="" alt="User" />
+                  <AvatarFallback className="bg-farm-green text-white">JD</AvatarFallback>
+                </Avatar>
+                <span className="hidden sm:inline text-sm font-medium">John Doe</span>
+                <ChevronDown className="h-4 w-4 text-muted-foreground" />
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end" className="w-56">
+              <DropdownMenuLabel>My Account</DropdownMenuLabel>
+              <DropdownMenuSeparator />
+              <DropdownMenuItem>
+                <User className="mr-2 h-4 w-4" />
+                <span>Profile</span>
+              </DropdownMenuItem>
+              <DropdownMenuItem>Settings</DropdownMenuItem>
+              <DropdownMenuItem>Help</DropdownMenuItem>
+              <DropdownMenuSeparator />
+              <DropdownMenuItem>Logout</DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
         </div>
       </div>
     </header>
