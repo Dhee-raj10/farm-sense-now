@@ -1,0 +1,135 @@
+/* Custom CSS for Smart Farming Dashboard */
+
+:root {
+    --farm-green: #2E7D32;
+    --farm-green-light: #4CAF50;
+    --farm-green-dark: #1B5E20;
+    --farm-soil: #795548;
+    --farm-soil-light: #A1887F;
+    --farm-sky: #1976D2;
+    --farm-sky-light: #64B5F6;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+}
+
+/* Navigation */
+.navbar-brand {
+    font-weight: bold;
+    color: var(--farm-green) !important;
+}
+
+.nav-link {
+    font-weight: 500;
+}
+
+/* Cards */
+.dashboard-card {
+    border-radius: 12px;
+    border: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+
+/* Status indicators */
+.status-good {
+    color: var(--farm-green);
+}
+
+.status-warning {
+    color: #ff9800;
+}
+
+.status-danger {
+    color: #f44336;
+}
+
+/* Charts */
+.chart-container {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Buttons */
+.btn-farm-primary {
+    background-color: var(--farm-green);
+    border-color: var(--farm-green);
+    color: white;
+}
+
+.btn-farm-primary:hover {
+    background-color: var(--farm-green-dark);
+    border-color: var(--farm-green-dark);
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(135deg, var(--farm-green) 0%, var(--farm-sky) 100%);
+    color: white;
+    padding: 4rem 0;
+}
+
+/* Forms */
+.form-container {
+    max-width: 400px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+
+/* Weather icons */
+.weather-icon {
+    font-size: 2rem;
+    color: var(--farm-sky);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 2rem 0;
+    }
+    
+    .dashboard-card {
+        margin-bottom: 1rem;
+    }
+}
+
+/* Animation */
+.fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Utilities */
+.text-farm-green {
+    color: var(--farm-green) !important;
+}
+
+.bg-farm-green {
+    background-color: var(--farm-green) !important;
+}
+
+.border-farm-green {
+    border-color: var(--farm-green) !important;
+}
