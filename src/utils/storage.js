@@ -1,56 +1,53 @@
-interface User {
-  email: string;
-  farmName?: string;
-}
+// Storage utility functions for managing user data and application state
 
 export const storageUtils = {
   // User management
-  setUser: (user: User): void => {
+  setUser: (user) => {
     localStorage.setItem('farmSenseUser', JSON.stringify(user));
   },
 
-  getUser: (): User | null => {
+  getUser: () => {
     const user = localStorage.getItem('farmSenseUser');
     return user ? JSON.parse(user) : null;
   },
 
-  removeUser: (): void => {
+  removeUser: () => {
     localStorage.removeItem('farmSenseUser');
   },
 
-  isLoggedIn: (): boolean => {
+  isLoggedIn: () => {
     return !!localStorage.getItem('farmSenseUser');
   },
 
   // OpenAI API Key management
-  setOpenAIKey: (key: string): void => {
+  setOpenAIKey: (key) => {
     localStorage.setItem('farmSenseOpenAIKey', key);
   },
 
-  getOpenAIKey: (): string | null => {
+  getOpenAIKey: () => {
     return localStorage.getItem('farmSenseOpenAIKey');
   },
 
-  removeOpenAIKey: (): void => {
+  removeOpenAIKey: () => {
     localStorage.removeItem('farmSenseOpenAIKey');
   },
 
   // Soil analysis data
-  setSoilData: (data: any): void => {
+  setSoilData: (data) => {
     localStorage.setItem('farmSenseSoilData', JSON.stringify(data));
   },
 
-  getSoilData: (): any | null => {
+  getSoilData: () => {
     const data = localStorage.getItem('farmSenseSoilData');
     return data ? JSON.parse(data) : null;
   },
 
   // Farm settings
-  setFarmSettings: (settings: any): void => {
+  setFarmSettings: (settings) => {
     localStorage.setItem('farmSenseSettings', JSON.stringify(settings));
   },
 
-  getFarmSettings: (): any => {
+  getFarmSettings: () => {
     const settings = localStorage.getItem('farmSenseSettings');
     return settings ? JSON.parse(settings) : {
       units: 'metric',
