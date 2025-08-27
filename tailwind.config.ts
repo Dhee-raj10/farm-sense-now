@@ -63,22 +63,20 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				farm: {
-					green: {
-						light: '#4CAF50',
-						DEFAULT: '#2E7D32',
-						dark: '#1B5E20'
-					},
-					soil: {
-						light: '#A1887F',
-						DEFAULT: '#795548',
-						dark: '#5D4037'
-					},
-					sky: {
-						light: '#64B5F6',
-						DEFAULT: '#1976D2',
-						dark: '#0D47A1'
-					}
+				'farm-green': {
+					light: 'hsl(122, 39%, 50%)',
+					DEFAULT: 'hsl(122, 39%, 33%)',
+					dark: 'hsl(122, 39%, 20%)'
+				},
+				'farm-soil': {
+					light: 'hsl(16, 25%, 65%)',
+					DEFAULT: 'hsl(16, 25%, 45%)',
+					dark: 'hsl(16, 25%, 25%)'
+				},
+				'farm-sky': {
+					light: 'hsl(210, 79%, 65%)',
+					DEFAULT: 'hsl(210, 79%, 46%)',
+					dark: 'hsl(210, 79%, 26%)'
 				}
 			},
 			borderRadius: {

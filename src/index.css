@@ -91,28 +91,41 @@
 
 /* Weather card variants */
 .weather-sunny {
-  @apply bg-gradient-to-br from-farm-sky-light to-farm-sky text-white;
+  @apply bg-gradient-to-br from-farm-sky-light to-farm-sky text-primary-foreground;
 }
 
 .weather-cloudy {
-  @apply bg-gradient-to-br from-gray-300 to-gray-400 text-gray-800;
+  @apply bg-gradient-to-br from-muted to-muted-foreground text-foreground;
 }
 
 .weather-rainy {
-  @apply bg-gradient-to-br from-farm-sky-dark to-gray-600 text-white;
+  @apply bg-gradient-to-br from-farm-sky-dark to-primary text-primary-foreground;
 }
 
 /* Soil health variants */
 .soil-healthy {
-  @apply bg-gradient-to-br from-farm-green-light to-farm-green text-white;
+  @apply bg-gradient-to-br from-farm-green-light to-farm-green text-primary-foreground;
 }
 
 .soil-moderate {
-  @apply bg-gradient-to-br from-amber-400 to-amber-500 text-white;
+  @apply bg-gradient-to-br from-amber-400 to-amber-500 text-primary-foreground;
 }
 
 .soil-poor {
-  @apply bg-gradient-to-br from-red-400 to-red-500 text-white;
+  @apply bg-gradient-to-br from-destructive to-red-500 text-destructive-foreground;
+}
+
+/* Farm-specific design tokens */
+.farm-gradient {
+  background: var(--gradient-farm);
+}
+
+.farm-card-hover {
+  @apply transition-all duration-300 hover:scale-105 hover:shadow-lg;
+}
+
+.farm-text-gradient {
+  @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
 }
 
 /* Animations for the dashboard */
